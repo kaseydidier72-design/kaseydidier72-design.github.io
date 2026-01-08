@@ -1,2 +1,204 @@
-# kaseydidier72-design.github.io
-;n,,n;n,;n,;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paris Saint‑Germain | Site fan</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #0b1026;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #002654, #c8102e);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      min-height: 80vh;
+    }
+
+    .hero {
+      height: 60vh;
+      background: linear-gradient(rgba(0,38,84,0.8), rgba(200,16,46,0.8)), url("https://cdn.artphotolimited.com/images/59888232b0ba742a2efde168/1000x1000/le-psg-remporte-la-ligue-des-champions-2025.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 140px;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+    }
+
+    section {
+      padding: 50px 10%;
+    }
+
+    h3 {
+      color: #c8102e;
+      margin-bottom: 15px;
+      font-size: 1.9rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #11183a;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #002654;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Paris Saint‑Germain</h1>
+  <nav>
+    <a href="#" data-page="accueil">Accueil</a>
+    <a href="#" data-page="histoire">Histoire</a>
+    <a href="#" data-page="joueurs">Joueurs</a>
+    <a href="#" data-page="palmares">Palmarès</a>
+  </nav>
+</header>
+
+<main>
+  <div id="accueil" class="page active">
+    <div class="hero">
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/fr/8/86/Paris_Saint-Germain_Logo.svg" alt="Logo PSG">
+        <h2>Ici c’est Paris</h2>
+      </div>
+    </div>
+
+    <section>
+      <h3>Présentation</h3>
+      <p>
+        Fondé en 1970, le Paris Saint‑Germain est le club de football le plus titré de France.
+        Il évolue au Parc des Princes et s’impose comme une référence nationale et européenne.
+      </p>
+    </section>
+  </div>
+
+  <div id="histoire" class="page">
+    <section>
+      <h3>Histoire du club</h3>
+      <p>
+        Né de la fusion entre le Paris FC et le Stade Saint‑Germanois, le PSG s’est construit
+        une identité forte au fil des décennies, marquée par des titres et des joueurs emblématiques.
+      </p>
+    </section>
+  </div>
+
+  <div id="joueurs" class="page">
+    <section>
+      <h3>Joueurs emblématiques</h3>
+      <div class="cards">
+        <div class="card">Kylian Mbappé</div>
+        <div class="card">Neymar Jr.</div>
+        <div class="card">Zlatan Ibrahimović</div>
+        <div class="card">Ronaldinho</div>
+        <div class="card">Marquinhos</div>
+      </div>
+    </section>
+  </div>
+
+  <div id="palmares" class="page">
+    <section>
+      <h3>Palmarès</h3>
+      <ul>
+        <li>Championnat de France : 11 titres</li>
+        <li>Coupe de France : 14 titres</li>
+        <li>Coupe de la Ligue : 9 titres</li>
+        <li>Trophée des Champions : 12 titres</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 – Site fan non officiel du Paris Saint‑Germain</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('nav a');
+    const pages = document.querySelectorAll('.page');
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('data-page');
+
+        pages.forEach(page => page.classList.remove('active'));
+        const pageToShow = document.getElementById(target);
+        if (pageToShow) {
+          pageToShow.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
